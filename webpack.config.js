@@ -17,6 +17,11 @@ module.exports = {
     port: 9000
   },
   devtool: 'eval-source-map',
+  resolve: {
+    alias: {
+      lib: path.resolve(__dirname, 'lib')
+    }
+  },
   module: {
     rules: [
       {
