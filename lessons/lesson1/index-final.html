@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 1</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: solid 1px black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Simple tags:</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+
+<p>Paragraph</p>
+<span style="color: red; font-size: 20px">Span</span>
+<div>Div</div>
+<strong>Strong</strong>
+<em>Italic</em>
+<a href="#form">Hyperlink to form</a>
+<a href="https://vk.com/id33600277" target="_blank">Hyperlink to vk</a>
+
+<h1>Try to add local image:</h1>
+<img src="img/cat.jpg" alt="Cat">
+
+<h1>Try to add image from site:</h1>
+<img src="https://yt3.ggpht.com/b3hgmMgwScEcUB7rGxZl6m6ogxFLw5_GjKSVFdzVzd_Q8aAKkr35IkV7aIsCY8carzabsSlLmNbf3CFozMM=s900-mo-c-c0xffffffff-rj-k-no" alt="Cat">
+
+<h1>Create table:</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ONE</th>
+        <th>TWO</th>
+        <th>THREE</th>
+        <th>FOUR</th>
+        <th>FIVE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td colspan="2">TWO</td>
+        <td>ONE</td>
+        <td colspan="2">TWO</td>
+    </tr>
+    <tr>
+        <td>ONE</td>
+        <td>ONE</td>
+        <td>ONE</td>
+        <td>ONE</td>
+        <td>ONE</td>
+    </tr>
+    <tr>
+        <td colspan="5">ALL FIVE</td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="2">THREE + TWO</td>
+        <td>ONE</td>
+        <td>ONE</td>
+    </tr>
+    <tr>
+        <td>ONE</td>
+        <td>ONE</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<h1>Just simple form</h1>
+<form id="form">
+    <fieldset>
+        <legend>Select films you like</legend>
+        <div>
+            <input type="checkbox" name="film-check" id="film-check1"><label for="film-check1">Film 1</label>
+        </div>
+        <div>
+            <input type="checkbox" name="film-check" id="film-check2"><label for="film-check2">Film 2</label>
+        </div>
+        <div>
+            <input type="checkbox" name="film-check" id="film-check3"><label for="film-check3">Film 3</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Choose your favorite film:</legend>
+        <div>
+            <input type="radio" name="film" id="film1"><label for="film1">Film 1</label>
+        </div>
+        <div>
+            <input type="radio" name="film" id="film2"><label for="film2">Film 2</label>
+        </div>
+        <div>
+            <input type="radio" name="film" id="film3"><label for="film3">Film 3</label>
+        </div>
+    </fieldset>
+    <div>
+        <label for="textarea">Write something about your favorite film:</label>
+        <div>
+            <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+
+</body>
+</html>

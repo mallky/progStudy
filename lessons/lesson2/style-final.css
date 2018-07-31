@@ -1,0 +1,138 @@
+h1 {
+    text-align: center;
+}
+
+.red-box, .blue-box, .green-box {
+    width: 100px;
+    height: 100px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.red-box {
+    background: red;
+    position: absolute;
+    z-index: 1;
+}
+
+.blue-box {
+    background: blue;
+    position: relative;
+    top: 150px;
+    left: 100px;
+    z-index: 3;
+    color: gold;
+}
+
+.green-box {
+    background: green;
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    z-index: 2;
+    color: white;
+}
+
+.floating > * {
+    border: solid 1px black;
+}
+
+.floating {
+    margin: 150px 0 0 0;
+}
+
+.floating-1 {
+    float: left;
+    width: 10%;
+}
+
+.no-float {
+    width: 50%;
+}
+
+.clear-both {
+    clear: both;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+#flex {
+    border: 1px solid black;
+    margin: 15px;
+    padding: 15px;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+#css-animations {
+    margin: 15px;
+    border: solid 1px black;
+}
+
+#css-animations .circle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: black;
+    animation: opacity-anim 2s infinite ease-in-out;
+}
+
+#css-animations .from-top {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 100px;
+    background: black;
+    animation: from-top 2s infinite linear;
+}
+
+#css-animations .rounding-square {
+    width: 50px;
+    height: 50px;
+    margin-left: 200px;
+    background: black;
+    animation: rounding-square 2s infinite ease;
+}
+
+#css-animations .rounding-and-jump-square {
+    width: 50px;
+    height: 50px;
+    margin-left: 300px;
+    background: black;
+    animation: rounding-and-jump-square 4s infinite ease-in;
+    position: relative;
+}
+
+@keyframes opacity-anim {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@keyframes from-top {
+    0% { opacity: 0; position: relative; top: -120px;}
+    20% { opacity: 1 }
+    50% { position: relative; top: 0; }
+    80% { opacity: 1 }
+    100% { opacity: 0; position: relative; top: -120px; }
+}
+
+@keyframes rounding-square {
+    0% { transform: rotate(0deg)}
+    50% { transform: rotate(180deg) }
+    100% { transform: rotate(360deg) }
+}
+
+@keyframes rounding-and-jump-square {
+    0% { transform: rotate(0deg); top: -120px; left: 0;}
+    50% { transform: rotate(360deg); top: 0; left: 400px;}
+    100% { transform: rotate(720deg); top: -120px; left: 0; }
+}
