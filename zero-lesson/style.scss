@@ -1,0 +1,18 @@
+.rounding {
+  animation: rounding 15s cubic-bezier(0.49, 0.65, 0.8, 1.9);;
+  transform-origin: 50% 50%;
+}
+
+#first-circle {
+  animation: disapper 15s cubic-bezier(0.49, 0.65, 0.8, 1.9);;
+}
+
+@keyframes rounding {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes disapper {
+  from { fill: transparent; transform: rotate(0deg); }
+  to { fill: #DEDEDE; stroke: transparent; transform: rotate(360deg); }
+}
