@@ -20,30 +20,16 @@ export default class SvgWork {
   }
   
   mainFunc() {
-    const rect = lib.createRect({
-      width: 100,
-      height: 100,
-      x: 0,
-      y: 0,
-      style: 'fill: red; stroke: black; stroke-width: 2px;',
-      class: 'rounding',
-      id: 'first-rect'
-    });
     const circle = lib.createCircle({
       r: 50,
       cx: 50,
       cy: 50,
       style: 'fill: transparent; stroke: black; stroke-width: 2px;',
-      class: 'rounding',
       id: 'first-circle'
     });
 
-    this.svg.appendChild(rect);
     this.svg.appendChild(circle);
-
-    lib.animate(rect, {x: 100, y: 350}, 500);
     lib.animate(circle, {x: 100, y: 350}, 500);
-
 
     const rect2 = lib.createRect({
       width: 100,
@@ -56,6 +42,14 @@ export default class SvgWork {
     this.svg.appendChild(rect2);
 
     this.transformAnimation(rect2);
+
+    const text = lib.createText('HELLO WORLD!', {x: 250, y: 250});
+    this.svg.appendChild(text);
+
+    const path = lib.createPath({d: 'M150 0 L75 200 L225 200', fill: 'none', stroke: 'black'});
+    this.svg.appendChild(path);
+
+    this.createGraph(path);
   }
 
   transformAnimation(elem) {
@@ -68,16 +62,37 @@ export default class SvgWork {
       cx += 0.1;
       cy += 0.1;
 
-      if (degree > 380) {
+      if (degree > 180) {
         clearInterval(timer);
       }
 
       const animation = {
+        skewX: `${cx}`,
         translate: `${xShift} ${yShift}`,
         rotate: `${degree} ${cx} ${cy}`
       };
 
       lib.transform(elem, animation);
     }, lib.TIMER_STEP);
+  }
+
+  createGraph(elem) {
+    let path = 'M 0 0';
+    let x = 0;
+    let y = 0;
+
+    const timer = setInterval(() => {
+      if (x > 650) {
+        elem.setAttribute('d', path + 'Z');
+
+        clearInterval(timer);
+      }
+
+      x += 0.5;
+      y = 50 * Math.sin(x / 5) + 120;
+      path += ` L ${x} ${y}`;
+
+      elem.setAttribute('d', path);
+    }, lib.TIMER_STEP / 10);
   }
 }
